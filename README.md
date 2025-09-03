@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# The Chase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**The Chase** is a modern React web application for tracking cryptocurrency prices, viewing detailed coin information, and managing a personalized watchlist. It leverages the CoinGecko API for real-time data and integrates Firebase for user authentication and watchlist storage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Live Cryptocurrency Prices:** View up-to-date prices, market caps, and 24h changes for 100+ coins.
+- **Search & Filter:** Instantly search for your favorite cryptocurrencies.
+- **Detailed Coin Pages:** Access historical price charts, rankings, and descriptions for each coin.
+- **User Authentication:** Sign up and log in with email/password or Google.
+- **Personal Watchlist:** Add or remove coins from your watchlist, stored securely in Firebase.
+- **Responsive UI:** Clean, modern interface built with Material-UI and custom styles.
+- **Trending Coins Carousel:** See top trending coins in a visually engaging carousel.
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+_(Add screenshots here if available)_
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend:** React, React Router, Material-UI, Chart.js, Alice Carousel
+- **State Management:** React Context API
+- **Authentication & Database:** Firebase (Auth, Firestore)
+- **API:** CoinGecko (public crypto data)
+- **Other:** Axios, html-react-parser, react-icons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+src/
+  components/         # Reusable UI components (Header, AuthModal, UserSidebar, etc.)
+    banner/           # Banner and Carousel for trending coins
+  config/             # API endpoints, chart config, Firebase config
+  context/            # CryptoContext for global state
+  pages/              # Main pages (Homepage, CoinPage)
+  App.js              # Main app component with routing
+  firebase.js         # Firebase initialization
+  index.js            # Entry point
+public/
+  index.html          # HTML template
+  bannerpic.jpg       # Banner image
+  favicon.ico         # Favicon
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js (v14+ recommended)
+- npm
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repository:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```sh
+   git clone https://github.com/LomachenkoDev/TheChase.git
+   cd TheChase
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install dependencies:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```sh
+   npm install
+   ```
 
-## Learn More
+3. **Firebase Setup:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+   - Enable Email/Password and Google authentication.
+   - Create a Firestore database.
+   - Copy your Firebase config to `src/config/firebaseConfig.js` (see `.gitignore` for security).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Start the development server:**
+   ```sh
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Browse Coins:** The homepage displays a searchable, paginated table of cryptocurrencies.
+- **View Details:** Click a coin to see its price chart, description, and stats.
+- **Sign Up / Log In:** Use the login button in the header to create an account or sign in.
+- **Manage Watchlist:** Add or remove coins from your watchlist (visible in the sidebar when logged in).
 
-### Analyzing the Bundle Size
+## Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `npm start` – Run the app in development mode.
+- `npm run build` – Build for production.
+- `npm test` – Run tests.
 
-### Making a Progressive Web App
+## Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Your Firebase config should be placed in `src/config/firebaseConfig.js` (excluded from version control).
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT
